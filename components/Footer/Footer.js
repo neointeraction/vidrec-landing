@@ -61,7 +61,11 @@ const Footer = () => {
             <p>LOGO © Copyright 2022 ‘Product Name’. All rights reserved.</p>
             <p className="footer-text-with-logo">
               A product by
-              <a href="https://www.neointeraction.com/" target="_blank">
+              <a
+                href="https://www.neointeraction.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Neointeraction Design
               </a>
               <span className="logo-right">

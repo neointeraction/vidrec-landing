@@ -9,8 +9,8 @@ function VerticalTabs({ data }) {
         <Row>
           <Col sm={5}>
             <Nav variant="pills" className="flex-column">
-              {data.map((item) => (
-                <Nav.Item>
+              {data.map((item, index) => (
+                <Nav.Item key={index}>
                   <Nav.Link eventKey={item.tabTitle}>
                     <span>{item.tabTitle}</span>
                   </Nav.Link>
@@ -20,8 +20,10 @@ function VerticalTabs({ data }) {
           </Col>
           <Col sm={7}>
             <Tab.Content>
-              {data.map((item) => (
-                <Tab.Pane eventKey={item.tabTitle}>{item.tabContent}</Tab.Pane>
+              {data.map((item, index) => (
+                <Tab.Pane key={index} eventKey={item.tabTitle}>
+                  {item.tabContent}
+                </Tab.Pane>
               ))}
             </Tab.Content>
           </Col>
