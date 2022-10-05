@@ -1,0 +1,344 @@
+/*  === ==  == AUTHOR: 01010011 01001000 01000001 01001101 01000101 01000101 01010010  == == ==  */
+/* Reset  */
+@import url(./reset.css);
+
+/* FONT INCLUDES  */
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap");
+
+/* BASE STYLES  */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* scrollbar  */
+
+/* scrollbar */
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+  background: #bebebe;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+  background: #4286f5;
+  border-radius: 8px;
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+  background: #366fcc;
+}
+
+.highlight {
+  color: #4286f5 !important;
+}
+
+.highlight-yellow {
+  color: #fbbc05 !important;
+}
+
+.align-center {
+  align-items: center !important;
+}
+
+.section-margin {
+  margin: 60px 0 !important;
+}
+
+.negative-container-margin {
+  margin-left: -40px;
+  margin-right: 0;
+}
+
+.centered {
+  text-align: center !important;
+}
+
+/* Typography  */
+
+.h1 {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 58px;
+  line-height: 72px;
+  color: #1a191e;
+}
+
+.h2 {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 52px;
+  color: #1a191e;
+}
+
+.h3 {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: #1a191e;
+}
+
+.h4 {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1a191e;
+}
+
+.p1 {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  color: #494949;
+}
+
+.p2 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #494949;
+}
+
+.p3 {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #494949;
+}
+
+/* Buttons  */
+
+.custom-button {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+  background: #4286f5;
+  border-radius: 4px;
+  padding: 15px 40px;
+}
+
+.end-icon {
+  margin-left: 10px;
+}
+
+.custom-button:hover {
+  background: #366fcc;
+  transition: 0.3s all ease-in-out;
+}
+
+.custom-button.secondary {
+  background: #fbbc05;
+  color: #1b1b1b;
+}
+
+.custom-button.secondary:hover {
+  background: #e6ab03;
+  transition: 0.3s all ease-in-out;
+}
+
+.custom-button.tertiary {
+  background: #ecf3fe;
+  color: #4286f5;
+}
+
+.custom-button.tertiary:hover {
+  background: #c6dbfc;
+  transition: 0.3s all ease-in-out;
+}
+
+/* Header  */
+
+.navbar-custom {
+  padding: 35px 0;
+}
+
+.navbar-custom .nav-link {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+  padding: 15px 26px !important;
+}
+
+.navbar-custom .nav-item.show {
+  background: #f6f7f9;
+  border-radius: 4px;
+}
+
+.navbar-custom .nav-item.show .nav-link {
+  color: #4286f5;
+}
+
+.navbar-custom .dropdown-menu {
+  background: #f6f7f9;
+  border-radius: 4px;
+  border: none;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.navbar-custom .dropdown-item {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+  padding: 10px 24px;
+}
+
+.navbar-custom .dropdown-item:active {
+  background: #f6f7f9;
+  color: #4286f5;
+}
+
+.sign-in-dropdown {
+  margin-right: 0px;
+}
+
+.subtitle-block {
+  width: 460px;
+}
+
+/* Footer  */
+
+.footer-block {
+  background-image: url(../images/footerbg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 80px 0;
+}
+
+.footer-list {
+  list-style: none;
+}
+
+.footer-list li {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.footer-list li:last-child {
+  margin-bottom: 0;
+}
+
+.Footer-title {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.footer-strip {
+  background: #ffffff;
+  padding: 10px;
+}
+
+.footer-strip-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-strip-flex p {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000000;
+}
+
+.footer-strip-flex p span {
+  font-weight: 600;
+}
+
+.footer-text-with-logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.logo-right {
+  margin-left: 10px;
+}
+
+.footer-text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #ffffff;
+}
+
+/* Action Strip  */
+
+.actionstrip-container {
+  background: #1b1b1b;
+  padding: 30px 0;
+}
+
+.actionstrip-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.action-strip-title {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: #ffffff;
+}
+
+/* Interview Compare Card */
+
+.ICC-card-container {
+  background: #1b1b1b;
+  border-radius: 4px;
+  padding: 40px;
+  margin: 40px 0;
+  width: 100%;
+}
+.ICC-title {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* home page  */
+
+.section-title-block {
+  width: 650px;
+  margin: auto;
+}
+
+.client-strip-container {
+  margin: 20px 0;
+}
