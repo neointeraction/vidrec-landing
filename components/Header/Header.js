@@ -36,7 +36,7 @@ function Header() {
           <Form className="d-flex">
             <NavDropdown
               title="Sign In"
-              id="navbarScrollingDropdown"
+              id="signInDropdown"
               className="sign-in-dropdown"
             >
               <NavDropdown.Item href="#action3">Employer</NavDropdown.Item>

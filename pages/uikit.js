@@ -1,5 +1,4 @@
 import React from "react";
-import { SSRProvider } from "react-bootstrap";
 import Head from "next/head";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";

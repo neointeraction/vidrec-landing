@@ -60,7 +60,10 @@ const Footer = () => {
           <div className="footer-strip-flex">
             <p>LOGO © Copyright 2022 ‘Product Name’. All rights reserved.</p>
             <p className="footer-text-with-logo">
-              A product by <span>Neointeraction Design</span>
+              A product by
+              <a href="https://www.neointeraction.com/" target="_blank">
+                Neointeraction Design
+              </a>
               <span className="logo-right">
                 <Image src={NeoLogo} alt="NeoLogo" />
               </span>

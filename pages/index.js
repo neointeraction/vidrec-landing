@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import Head from "next/head";
+import Image from "next/image";
+
 import { Container, Row, Col } from "react-bootstrap";
 import { useAnimation, motion } from "framer-motion"; // "framer-motion": "^7.5.2",
 import { useInView } from "react-intersection-observer";
@@ -10,10 +12,16 @@ import {
   ActionStrip,
   InterviewCompareCard,
   ClientStrip,
+  VerticalTabs,
+  SuccessSlider,
 } from "components";
 
 import BannerImg from "assets/images/bannerImg.png";
-import Image from "next/image";
+import Efficiency from "assets/images/efficiency.png";
+import Integration from "assets/images/Integration.png";
+import Workflow from "assets/images/Workflow.png";
+import AI from "assets/images/AI.png";
+import EastIcon from "@mui/icons-material/East";
 
 const titleAnimation = {
   visible: { opacity: 1, y: 0, transition: { ease: "easeOut", duration: 0.5 } },
@@ -21,15 +29,68 @@ const titleAnimation = {
 };
 
 const blockAnimation = {
-  visible: { opacity: 1, transition: { ease: "easeOut", duration: 0.5 } },
+  visible: { opacity: 1, transition: { ease: "easeOut", duration: 1.5 } },
   hidden: { opacity: 0 },
 };
+
+const whyUseTabData = [
+  {
+    tabTitle: "Efficiency of Recruitment",
+    tabContent: (
+      <div className="tab-content-container">
+        <Image src={Efficiency} alt="Efficiency" />
+        <Typography
+          level="p2"
+          text="Save hundreds of hours worth of labour by using our platform and share the tedious but important task of hiring with us."
+        />
+      </div>
+    ),
+  },
+  {
+    tabTitle: "Multiplatforn Integration",
+    tabContent: (
+      <div className="tab-content-container">
+        <Image src={Integration} alt="Integration" />
+        <Typography
+          level="p2"
+          text="Integrates to other popular job platforms like Naukri, Indeed etc. Our platform coexists with the rest of your hiring tools."
+        />
+      </div>
+    ),
+  },
+  {
+    tabTitle: "AI based recommendation & Assesment",
+    tabContent: (
+      <div className="tab-content-container">
+        <Image src={AI} alt="AI" />
+        <Typography
+          level="p2"
+          text="Our cutting edge AI helps you save countless hours  by recomending the right candidates for your job."
+        />
+      </div>
+    ),
+  },
+  {
+    tabTitle: "Integrate with your Existing Hiring Workflow",
+    tabContent: (
+      <div className="tab-content-container">
+        <Image src={Workflow} alt="AI" />
+        <Typography
+          level="p2"
+          text="Our cutting edge AI helps you save countless hours  by recomending the right candidates for your job."
+        />
+      </div>
+    ),
+  },
+];
 
 export default function Home() {
   const comparison = useAnimation();
   const clients = useAnimation();
+  const whyUse = useAnimation();
   const [refComparison, inViewComparison] = useInView();
   const [refClients, inViewClients] = useInView();
+  const [refWhyUse, inViewWhyUse] = useInView();
   useEffect(() => {
     if (inViewComparison) {
       comparison.start("visible");
@@ -37,11 +98,21 @@ export default function Home() {
     if (inViewClients) {
       clients.start("visible");
     }
-  }, [clients, comparison, inViewComparison, inViewClients]);
+    if (inViewWhyUse) {
+      whyUse.start("visible");
+    }
+  }, [
+    clients,
+    comparison,
+    whyUse,
+    inViewComparison,
+    inViewClients,
+    inViewWhyUse,
+  ]);
 
   return (
     <div>
-      <div className="section-margin ">
+      <div className="section-margin mt-2">
         <Container>
           <Head>
             <title>VidRec</title>
@@ -165,6 +236,46 @@ export default function Home() {
           </motion.div>
         </Container>
       </div>
+      <div className="section-margin centered">
+        <Container>
+          <motion.div
+            ref={refWhyUse}
+            initial="hidden"
+            animate={whyUse}
+            variants={titleAnimation}
+            className="section-title-block"
+          >
+            <Typography
+              level="h2"
+              text={
+                <>
+                  Why Use <span className="highlight">‘Product Name’ </span> ?
+                </>
+              }
+            />
+            <Typography
+              level="p1"
+              text="A video-based solution that is sure to enhance your Hiring Experience"
+            />
+          </motion.div>
+          <motion.div
+            ref={refWhyUse}
+            initial="hidden"
+            animate={whyUse}
+            variants={blockAnimation}
+          >
+            <div className="margin-container">
+              <VerticalTabs data={whyUseTabData} />
+            </div>
+          </motion.div>
+          <Button
+            btnText="Explore All Features"
+            variant="tertiary"
+            endIcon={<EastIcon />}
+          />
+        </Container>
+      </div>
+      <SuccessSlider />
     </div>
   );
 }

@@ -5,3 +5,5 @@ export { default as Footer } from "./Footer";
 export { default as ActionStrip } from "./ActionStrip";
 export { default as InterviewCompareCard } from "./InterviewCompareCard";
 export { default as ClientStrip } from "./ClientStrip";
+export { default as VerticalTabs } from "./VerticalTabs";
+export { default as SuccessSlider } from "./SuccessSlider";
