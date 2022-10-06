@@ -6,15 +6,63 @@
 
 /* FONT INCLUDES  */
 
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap");
+@font-face {
+  font-family: "DM Sans";
+  src: url("../fonts/DMSans-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("../fonts/DMSans-Medium.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("../fonts/DMSans-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Manrope */
+
+@font-face {
+  font-family: "Manrope";
+  src: url("../fonts/Manrope-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("../fonts/Manrope-Medium.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("../fonts/Manrope-SemiBold.ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Manrope", sans-serif;
+  src: url("../fonts/Manrope-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
 
 /* BASE STYLES  */
 
 body {
   margin: 0;
   padding: 0;
-  font-family: "Manrope", sans-serif;
+  font-family: "Manrope", sans-serif !important;
   font-size: 16px;
   font-weight: 400;
 }
@@ -450,16 +498,16 @@ body::-webkit-scrollbar-thumb:hover {
 
 .slick-next {
   color: #fff;
-  height: 64px;
-  width: 64px;
+  height: 64px !important;
+  width: 64px !important;
   right: -180px;
   transition: 0.3s all ease-in-out;
 }
 
 .slick-prev {
   color: #fff;
-  height: 64px;
-  width: 64px;
+  height: 64px !important;
+  width: 64px !important;
   left: -180px;
   transition: 0.3s all ease-in-out;
 }
