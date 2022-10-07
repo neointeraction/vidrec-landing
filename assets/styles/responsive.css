@@ -1,0 +1,31 @@
+@media only screen and (max-width: 768px) {
+  .h1 {
+    font-size: 38px !important;
+    line-height: 52px !important;
+  }
+  .subtitle-block {
+    width: 100% !important;
+  }
+  .banner-img-block {
+    margin-top: 40px;
+  }
+  .section-title-block {
+    width: 100% !important;
+  }
+  .success-story-container {
+    padding: 60px 0 !important;
+  }
+  .slick-arrow {
+    display: none !important;
+  }
+  .h2 {
+    font-size: 34px !important;
+    line-height: 42px !important;
+  }
+  .section-margin.mt-2 {
+    margin-top: 0 !important;
+  }
+  .section-margin {
+    margin: 60px 0 !important;
+  }
+}

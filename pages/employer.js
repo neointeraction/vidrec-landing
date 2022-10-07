@@ -9,14 +9,9 @@ import { useInView } from "react-intersection-observer";
 import {
   Typography,
   Button,
-  ActionStrip,
   InterviewCompareCard,
-  ClientStrip,
   VerticalTabs,
   SuccessSlider,
-  Card,
-  Pricing,
-  ExploreBanner,
 } from "components";
 
 import BannerImg from "assets/images/bannerImg.png";
@@ -25,9 +20,6 @@ import Integration from "assets/images/Integration.png";
 import Workflow from "assets/images/Workflow.png";
 import AI from "assets/images/AI.png";
 import EastIcon from "@mui/icons-material/East";
-
-import CardIg from "assets/images/temp/box.jpg";
-import Link from "next/link";
 
 const titleAnimation = {
   visible: { opacity: 1, y: 0, transition: { ease: "easeOut", duration: 0.5 } },
@@ -95,72 +87,35 @@ const whyUseTabData = [
   },
 ];
 
-const candidateCards = [
-  {
-    img: CardIg,
-    title: "Create an impactful first impression",
-    subtext: "Two line sentence about this process",
-  },
-  {
-    img: CardIg,
-    title: "Easy Application Submission",
-    subtext: "Two line sentence about this process",
-  },
-  {
-    img: CardIg,
-    title: "Create & Manage Video Resumes",
-    subtext: "Two line sentence about this process",
-  },
-];
-
-export default function Home() {
+const Employer = () => {
   const comparison = useAnimation();
-  const clients = useAnimation();
   const whyUse = useAnimation();
   const trySection = useAnimation();
-  const forCandidate = useAnimation();
-  const pricing = useAnimation();
 
   const [refComparison, inViewComparison] = useInView();
-  const [refClients, inViewClients] = useInView();
+
   const [refWhyUse, inViewWhyUse] = useInView();
   const [refTry, inViewTry] = useInView();
-  const [refForCandidate, inViewForCandidate] = useInView();
-  const [refPricing, inViewPricing] = useInView();
 
   useEffect(() => {
     if (inViewComparison) {
       comparison.start("visible");
     }
-    if (inViewClients) {
-      clients.start("visible");
-    }
+
     if (inViewWhyUse) {
       whyUse.start("visible");
     }
     if (inViewTry) {
       trySection.start("visible");
     }
-    if (inViewForCandidate) {
-      forCandidate.start("visible");
-    }
-    if (inViewPricing) {
-      pricing.start("visible");
-    }
   }, [
-    clients,
     comparison,
     whyUse,
     trySection,
-    forCandidate,
-    pricing,
 
     inViewComparison,
-    inViewClients,
     inViewWhyUse,
     inViewTry,
-    inViewForCandidate,
-    inViewPricing,
   ]);
 
   return (
@@ -168,7 +123,7 @@ export default function Home() {
       <div className="section-margin mt-2">
         <Container>
           <Head>
-            <title>VidRec</title>
+            <title>VidRec | Employer</title>
             <meta name="description" content="VidRec web" />
             {/* <link rel="icon" href="/favicon.ico" /> */}
           </Head>
@@ -179,8 +134,8 @@ export default function Home() {
                   level="h1"
                   text={
                     <>
-                      Accelerate your Hiring Process by upto{" "}
-                      <span className="highlight">80%</span>
+                      Save <span className="highlight">90%</span> of your time
+                      when searching for the right employee
                     </>
                   }
                 />
@@ -192,7 +147,8 @@ export default function Home() {
                 <div className="subtitle-block">
                   <Typography
                     level="p1"
-                    text="We assist recruiters worldwide engage, interview, and hire better employees while assisting fresh graduates in getting hired."
+                    text="Two sentence line about the ease of the
+                    Hiring Process."
                   />
                 </div>
               </motion.div>
@@ -201,9 +157,11 @@ export default function Home() {
                 transition={{ ease: "easeOut", delay: 1 }}
               >
                 <div className="mt-4">
-                  <Link href={"/employer"} passHref>
-                    <Button btnText="Employer" variant="Primary" />
-                  </Link>
+                  <Button
+                    btnText="Sign up as Employer"
+                    variant="Primary"
+                    endIcon={<EastIcon />}
+                  />
                 </div>
               </motion.div>
             </Col>
@@ -218,23 +176,6 @@ export default function Home() {
             </Col>
           </Row>
         </Container>
-      </div>
-      <div className="section-margin ">
-        <motion.div
-          animate={{ y: [50, 0], opacity: [0, 1] }}
-          transition={{ ease: "easeOut", delay: 1.2 }}
-        >
-          <ActionStrip
-            text={
-              <>
-                Learn to stand-out from the crowd with your
-                <span className="highlight-yellow"> Video Resume.</span>
-              </>
-            }
-            btnText="Candidates"
-            onClick={() => {}}
-          />
-        </motion.div>
       </div>
       <div className="section-margin centered">
         <Container>
@@ -269,32 +210,6 @@ export default function Home() {
       <div className="section-margin centered">
         <Container>
           <motion.div
-            ref={refClients}
-            initial="hidden"
-            animate={clients}
-            variants={titleAnimation}
-            className="section-title-block"
-          >
-            <Typography level="h2" text="Trusted by the best organizations" />
-            <Typography
-              level="p1"
-              text="Companies that use ‘Product Name’ to 
-              hire their future leaders"
-            />
-          </motion.div>
-          <motion.div
-            ref={refClients}
-            initial="hidden"
-            animate={clients}
-            variants={blockAnimation}
-          >
-            <ClientStrip />
-          </motion.div>
-        </Container>
-      </div>
-      <div className="section-margin centered">
-        <Container>
-          <motion.div
             ref={refWhyUse}
             initial="hidden"
             animate={whyUse}
@@ -305,7 +220,8 @@ export default function Home() {
               level="h2"
               text={
                 <>
-                  Why Use <span className="highlight">‘Product Name’ </span> ?
+                  How can <span className="highlight">‘Product Name’ </span>make
+                  Hiring easy ?
                 </>
               }
             />
@@ -373,76 +289,8 @@ export default function Home() {
           </Row>
         </Container>
       </div>
-      <div className="section-margin centered greyed">
-        <Container>
-          <motion.div
-            ref={refForCandidate}
-            initial="hidden"
-            animate={forCandidate}
-            variants={titleAnimation}
-            className="section-title-block"
-          >
-            <Typography level="h2" text={<>For Candidates</>} />
-            <Typography
-              level="p1"
-              text="We don't let interviewers leave you hanging, obtain feedbacks from industry experts and grow."
-            />
-          </motion.div>
-          <motion.div
-            ref={refForCandidate}
-            initial="hidden"
-            animate={forCandidate}
-            variants={blockAnimation}
-          >
-            <div className="margin-container">
-              <Row>
-                {candidateCards.map((item, index) => (
-                  <Col key={index}>
-                    <Card
-                      cardImg={item.img}
-                      title={item.title}
-                      subtitle={item.subtext}
-                    />
-                  </Col>
-                ))}
-              </Row>
-            </div>
-          </motion.div>
-          <Button
-            btnText="Create a profile"
-            variant="secondary"
-            endIcon={<EastIcon />}
-          />
-        </Container>
-      </div>
-      <div className="section-margin centered">
-        <Container>
-          <motion.div
-            ref={refPricing}
-            initial="hidden"
-            animate={pricing}
-            variants={titleAnimation}
-            className="section-title-block"
-          >
-            <Typography level="h2" text={<>Pricing</>} />
-            <Typography
-              level="p1"
-              text="Find plans based on your company’s requirements."
-            />
-          </motion.div>
-          <motion.div
-            ref={refPricing}
-            initial="hidden"
-            animate={pricing}
-            variants={blockAnimation}
-          >
-            <div className="margin-container">
-              <Pricing />
-            </div>
-          </motion.div>
-        </Container>
-      </div>
-      <ExploreBanner />
     </div>
   );
-}
+};
+
+export default Employer;

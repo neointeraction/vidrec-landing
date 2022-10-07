@@ -9,22 +9,21 @@ import { useInView } from "react-intersection-observer";
 import {
   Typography,
   Button,
-  ActionStrip,
-  InterviewCompareCard,
-  ClientStrip,
-  VerticalTabs,
-  SuccessSlider,
   Card,
   Pricing,
   ExploreBanner,
+  HRSlider,
 } from "components";
 
-import BannerImg from "assets/images/bannerImg.png";
+import BannerImg from "assets/images/candidate-banner.png";
 import Efficiency from "assets/images/efficiency.png";
 import Integration from "assets/images/Integration.png";
 import Workflow from "assets/images/Workflow.png";
 import AI from "assets/images/AI.png";
 import EastIcon from "@mui/icons-material/East";
+import W1 from "assets/images/w1.jpg";
+import W2 from "assets/images/w2.jpg";
+import W3 from "assets/images/w3.jpg";
 
 import CardIg from "assets/images/temp/box.jpg";
 import Link from "next/link";
@@ -113,7 +112,7 @@ const candidateCards = [
   },
 ];
 
-export default function Home() {
+const Candidate = () => {
   const comparison = useAnimation();
   const clients = useAnimation();
   const whyUse = useAnimation();
@@ -165,209 +164,58 @@ export default function Home() {
 
   return (
     <div>
-      <div className="section-margin mt-2">
+      <div className="section-margin mt-2 candidate-banner">
         <Container>
           <Head>
             <title>VidRec</title>
             <meta name="description" content="VidRec web" />
-            {/* <link rel="icon" href="/favicon.ico" /> */}
           </Head>
           <Row className="align-center">
-            <Col xs={12} md={6}>
-              <motion.div animate={{ x: [-100, 0], opacity: [0, 1] }}>
+            <Col xs={12}>
+              <motion.div animate={{ y: [-100, 0], opacity: [0, 1] }}>
                 <Typography
                   level="h1"
                   text={
                     <>
-                      Accelerate your Hiring Process by upto{" "}
-                      <span className="highlight">80%</span>
+                      There is <span className="highlight">70%</span> more
+                      chance to get hired with a Video Resume
                     </>
                   }
                 />
               </motion.div>
               <motion.div
-                animate={{ x: [-100, 0], opacity: [0, 1] }}
+                animate={{ y: [100, 0], opacity: [0, 1] }}
                 transition={{ ease: "easeOut", delay: 0.5 }}
               >
                 <div className="subtitle-block">
                   <Typography
                     level="p1"
-                    text="We assist recruiters worldwide engage, interview, and hire better employees while assisting fresh graduates in getting hired."
+                    text="Two sentence line about how candidates
+                    can use the tool to their get hired."
                   />
                 </div>
               </motion.div>
               <motion.div
-                animate={{ y: [50, 0], opacity: [0, 1] }}
+                animate={{ y: [50, 0], opacity: [0, 1], zIndex: 1 }}
                 transition={{ ease: "easeOut", delay: 1 }}
               >
                 <div className="mt-4">
                   <Link href={"/employer"} passHref>
-                    <Button btnText="Employer" variant="Primary" />
+                    <Button
+                      btnText="Upgrade your resume for FREE!"
+                      variant="secondary"
+                      endIcon={<EastIcon />}
+                    />
                   </Link>
                 </div>
               </motion.div>
-            </Col>
-            <Col xs={12} md={6}>
+              {/* bannerimage  */}
               <motion.div
-                animate={{ opacity: [0, 1] }}
+                animate={{ opacity: [0, 1], zIndex: -1 }}
                 transition={{ ease: "easeOut", delay: 1 }}
-                className="banner-img-block"
+                className="banner-img-block candidate-banner-image"
               >
                 <Image src={BannerImg} alt="BannerImg" />
-              </motion.div>
-            </Col>
-          </Row>
-        </Container>
-      </div>
-      <div className="section-margin ">
-        <motion.div
-          animate={{ y: [50, 0], opacity: [0, 1] }}
-          transition={{ ease: "easeOut", delay: 1.2 }}
-        >
-          <ActionStrip
-            text={
-              <>
-                Learn to stand-out from the crowd with your
-                <span className="highlight-yellow"> Video Resume.</span>
-              </>
-            }
-            btnText="Candidates"
-            onClick={() => {}}
-          />
-        </motion.div>
-      </div>
-      <div className="section-margin centered">
-        <Container>
-          <motion.div
-            ref={refComparison}
-            initial="hidden"
-            animate={comparison}
-            variants={titleAnimation}
-            className="section-title-block"
-          >
-            <Typography
-              level="h2"
-              text={
-                <>
-                  With <span className="highlight">‘Product Name’ </span>
-                  Hiring Managers can overcome the long & frustrating hiring
-                  process
-                </>
-              }
-            />
-          </motion.div>
-          <motion.div
-            ref={refComparison}
-            initial="hidden"
-            animate={comparison}
-            variants={blockAnimation}
-          >
-            <InterviewCompareCard />
-          </motion.div>
-        </Container>
-      </div>
-      <div className="section-margin centered">
-        <Container>
-          <motion.div
-            ref={refClients}
-            initial="hidden"
-            animate={clients}
-            variants={titleAnimation}
-            className="section-title-block"
-          >
-            <Typography level="h2" text="Trusted by the best organizations" />
-            <Typography
-              level="p1"
-              text="Companies that use ‘Product Name’ to 
-              hire their future leaders"
-            />
-          </motion.div>
-          <motion.div
-            ref={refClients}
-            initial="hidden"
-            animate={clients}
-            variants={blockAnimation}
-          >
-            <ClientStrip />
-          </motion.div>
-        </Container>
-      </div>
-      <div className="section-margin centered">
-        <Container>
-          <motion.div
-            ref={refWhyUse}
-            initial="hidden"
-            animate={whyUse}
-            variants={titleAnimation}
-            className="section-title-block"
-          >
-            <Typography
-              level="h2"
-              text={
-                <>
-                  Why Use <span className="highlight">‘Product Name’ </span> ?
-                </>
-              }
-            />
-            <Typography
-              level="p1"
-              text="A video-based solution that is sure to enhance your Hiring Experience"
-            />
-          </motion.div>
-          <motion.div
-            ref={refWhyUse}
-            initial="hidden"
-            animate={whyUse}
-            variants={blockAnimation}
-          >
-            <div className="margin-container">
-              <VerticalTabs data={whyUseTabData} />
-            </div>
-          </motion.div>
-          <Button
-            btnText="Explore All Features"
-            variant="tertiary"
-            endIcon={<EastIcon />}
-          />
-        </Container>
-      </div>
-      <SuccessSlider />
-      <div className="section-margin">
-        <Container>
-          <Row className="align-center">
-            <Col>
-              <motion.div
-                ref={refTry}
-                initial="hidden"
-                animate={trySection}
-                variants={titleLeftAnimation}
-              >
-                <Typography
-                  level="h2"
-                  text={
-                    <>
-                      Try <span className="highlight">‘Product Name’ </span> ?
-                    </>
-                  }
-                />
-                <Typography
-                  level="p1"
-                  text="The right platform for a hassle free hiring "
-                />
-              </motion.div>
-            </Col>
-            <Col className="text-right">
-              <motion.div
-                ref={refTry}
-                initial="hidden"
-                animate={trySection}
-                variants={blockAnimation}
-              >
-                <Button
-                  btnText="Book a Demo"
-                  variant="primary"
-                  endIcon={<EastIcon />}
-                />
               </motion.div>
             </Col>
           </Row>
@@ -376,22 +224,29 @@ export default function Home() {
       <div className="section-margin centered greyed">
         <Container>
           <motion.div
-            ref={refForCandidate}
+            ref={refComparison}
             initial="hidden"
-            animate={forCandidate}
+            animate={comparison}
             variants={titleAnimation}
             className="section-title-block"
           >
-            <Typography level="h2" text={<>For Candidates</>} />
+            <Typography
+              level="h2"
+              text={
+                <>
+                  With <span className="highlight">‘Product Name’</span> you can
+                </>
+              }
+            />
             <Typography
               level="p1"
               text="We don't let interviewers leave you hanging, obtain feedbacks from industry experts and grow."
             />
           </motion.div>
           <motion.div
-            ref={refForCandidate}
+            ref={refComparison}
             initial="hidden"
-            animate={forCandidate}
+            animate={comparison}
             variants={blockAnimation}
           >
             <div className="margin-container">
@@ -408,41 +263,239 @@ export default function Home() {
               </Row>
             </div>
           </motion.div>
-          <Button
-            btnText="Create a profile"
-            variant="secondary"
-            endIcon={<EastIcon />}
-          />
         </Container>
       </div>
-      <div className="section-margin centered">
+      <div className="section-margin centered ">
         <Container>
           <motion.div
-            ref={refPricing}
+            ref={refClients}
             initial="hidden"
-            animate={pricing}
+            animate={clients}
             variants={titleAnimation}
             className="section-title-block"
           >
-            <Typography level="h2" text={<>Pricing</>} />
+            <Typography
+              level="h2"
+              text={
+                <>
+                  How can <span className="highlight">‘Product Name’</span> help
+                  you get hired?
+                </>
+              }
+            />
             <Typography
               level="p1"
-              text="Find plans based on your company’s requirements."
+              text="With our tool you can learn to ace 
+              your next interview."
             />
           </motion.div>
           <motion.div
-            ref={refPricing}
+            ref={refClients}
             initial="hidden"
-            animate={pricing}
+            animate={clients}
             variants={blockAnimation}
           >
             <div className="margin-container">
-              <Pricing />
+              <Row>
+                {candidateCards.map((item, index) => (
+                  <Col key={index}>
+                    <Card
+                      cardImg={item.img}
+                      title={item.title}
+                      subtitle={item.subtext}
+                    />
+                  </Col>
+                ))}
+              </Row>
             </div>
           </motion.div>
         </Container>
       </div>
-      <ExploreBanner />
+
+      <HRSlider />
+      <div className="section-margin centered ">
+        <Container>
+          <motion.div
+            ref={refWhyUse}
+            initial="hidden"
+            animate={whyUse}
+            variants={titleAnimation}
+            className="section-title-block"
+          >
+            <Typography
+              level="h2"
+              text={
+                <>
+                  Get notified on the tip of your fingers with our ‘WhatsApp’
+                  integration
+                </>
+              }
+            />
+            <Typography
+              level="p1"
+              text="Always stay updated with your job applications
+              and view reviews on the go."
+            />
+          </motion.div>
+          <motion.div
+            ref={refWhyUse}
+            initial="hidden"
+            animate={whyUse}
+            variants={blockAnimation}
+          >
+            <div className="margin-container">
+              <Row className="justify-content-center gx-16-minus">
+                <Col>
+                  <Image src={W1} alt="W1" />
+                </Col>
+                <Col>
+                  <Image src={W2} alt="W2" />
+                </Col>
+                <Col>
+                  <Image src={W3} alt="W3" />
+                </Col>
+              </Row>
+            </div>
+          </motion.div>
+        </Container>
+      </div>
+
+      <Container>
+        <div className="section-margin greyed-inside">
+          <Row className="align-center">
+            <Col xs={12} md={6}>
+              <motion.div animate={{ x: [-100, 0], opacity: [0, 1] }}>
+                <Typography
+                  level="h2"
+                  text={
+                    <>
+                      Use <span className="highlight">‘Product Name’ </span>
+                      and get hired!
+                    </>
+                  }
+                />
+              </motion.div>
+              <motion.div
+                animate={{ x: [-100, 0], opacity: [0, 1] }}
+                transition={{ ease: "easeOut", delay: 0.5 }}
+              >
+                <div className="subtitle-block">
+                  <ul className="checked-list">
+                    <li>Create unlimited video resumes</li>
+                    <li>Manage your interviews with on a Dashboard</li>
+                    <li>Get direct updates on WhatsApp</li>
+                    <li>Get access to exclusive Hiring Guides</li>
+                    <li>Easy application submission</li>
+                    <li>
+                      Talk to HR experts and professional from your field{" "}
+                      <span>(*starting from INR 200)</span>
+                    </li>
+                  </ul>
+                </div>
+              </motion.div>
+              <motion.div
+                animate={{ y: [50, 0], opacity: [0, 1] }}
+                transition={{ ease: "easeOut", delay: 1 }}
+              >
+                <div className="mt-4">
+                  <Link href={"/"} passHref>
+                    <Button
+                      btnText="Upgrade your resume for FREE!"
+                      variant="secondary"
+                      endIcon={<EastIcon />}
+                    />
+                  </Link>
+                </div>
+              </motion.div>
+            </Col>
+            <Col xs={12} md={6}>
+              <motion.div
+                animate={{ opacity: [0, 1] }}
+                transition={{ ease: "easeOut", delay: 1 }}
+                className="banner-img-block"
+              >
+                <Image src={BannerImg} alt="BannerImg" />
+              </motion.div>
+            </Col>
+          </Row>
+        </div>
+      </Container>
+
+      <div className="section-margin centered ">
+        <Container>
+          <motion.div
+            ref={refForCandidate}
+            initial="hidden"
+            animate={forCandidate}
+            variants={titleAnimation}
+            className="section-title-block"
+          >
+            <Typography level="h2" text={<>Check out our Hiring Guides</>} />
+            <Typography
+              level="p1"
+              text="With our tool you can learn to ace 
+              your next interview."
+            />
+          </motion.div>
+          <motion.div
+            ref={refForCandidate}
+            initial="hidden"
+            animate={forCandidate}
+            variants={blockAnimation}
+          >
+            <div className="margin-container">
+              <Row>
+                {candidateCards.map((item, index) => (
+                  <Col key={index}>
+                    <Card cardImg={item.img} title={item.title} />
+                  </Col>
+                ))}
+              </Row>
+            </div>
+          </motion.div>
+          <Button
+            btnText="Read More"
+            variant="tertiary"
+            endIcon={<EastIcon />}
+          />
+        </Container>
+      </div>
+      <Container>
+        <div className="section-margin greyed-inside">
+          <Row className="align-center">
+            <Col xs={12} md={8}>
+              <motion.div
+                ref={refTry}
+                initial="hidden"
+                animate={trySection}
+                variants={titleLeftAnimation}
+              >
+                <Typography level="h2" text={<>Setup your Video Resume</>} />
+                <Typography
+                  level="p1"
+                  text="Upgrade your resume and stand-out from the crowd. "
+                />
+              </motion.div>
+            </Col>
+            <Col xs={12} md={4} className="text-right">
+              <motion.div
+                ref={refTry}
+                initial="hidden"
+                animate={trySection}
+                variants={blockAnimation}
+              >
+                <Button
+                  btnText="Create a Profile"
+                  variant="secondary"
+                  endIcon={<EastIcon />}
+                />
+              </motion.div>
+            </Col>
+          </Row>
+        </div>
+      </Container>
     </div>
   );
-}
+};
+
+export default Candidate;

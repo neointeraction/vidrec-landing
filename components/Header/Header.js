@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 import { Container, Form, Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 import Image from "next/image";
@@ -22,9 +22,15 @@ function Header() {
             navbarScroll
           >
             <NavDropdown title="Product" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Features</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">Employer</NavDropdown.Item>
-              <NavDropdown.Item href="#action5">Candidate</NavDropdown.Item>
+              <NavDropdown.Item href="#action3">
+                <Link href="/employer">Features</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link href="/employer">Employer</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link href="/candidate">Candidate</Link>
+              </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link className="nav-link" href="#action1">
               Pricing
@@ -39,8 +45,12 @@ function Header() {
               id="signInDropdown"
               className="sign-in-dropdown"
             >
-              <NavDropdown.Item href="#action3">Employer</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">Candidate</NavDropdown.Item>
+              <NavDropdown.Item href="#action3">
+                <Link href="/">Employer</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action4">
+                <Link href="/">Candidate</Link>
+              </NavDropdown.Item>
             </NavDropdown>
             <Button btnText="Sign Up" variant="tertiary" />
           </Form>
