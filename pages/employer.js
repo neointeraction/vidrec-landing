@@ -7,6 +7,13 @@ import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 import {
+  titleAnimation,
+  subTitleAnimation,
+  titleLeftAnimation,
+  blockAnimation,
+} from "animation/variables";
+
+import {
   Typography,
   Button,
   InterviewCompareCard,
@@ -20,21 +27,7 @@ import Integration from "assets/images/Integration.png";
 import Workflow from "assets/images/Workflow.png";
 import AI from "assets/images/AI.png";
 import EastIcon from "@mui/icons-material/East";
-
-const titleAnimation = {
-  visible: { opacity: 1, y: 0, transition: { ease: "easeOut", duration: 0.5 } },
-  hidden: { opacity: 0, y: -50 },
-};
-
-const titleLeftAnimation = {
-  visible: { opacity: 1, x: 0, transition: { ease: "easeOut", duration: 0.5 } },
-  hidden: { opacity: 0, x: -50 },
-};
-
-const blockAnimation = {
-  visible: { opacity: 1, transition: { ease: "easeOut", duration: 1.5 } },
-  hidden: { opacity: 0 },
-};
+import Link from "next/link";
 
 const whyUseTabData = [
   {
@@ -225,6 +218,14 @@ const Employer = () => {
                 </>
               }
             />
+          </motion.div>
+          <motion.div
+            ref={refWhyUse}
+            initial="hidden"
+            animate={whyUse}
+            variants={subTitleAnimation}
+            className="section-title-block"
+          >
             <Typography
               level="p1"
               text="A video-based solution that is sure to enhance your Hiring Experience"
@@ -279,11 +280,13 @@ const Employer = () => {
                 animate={trySection}
                 variants={blockAnimation}
               >
-                <Button
-                  btnText="Book a Demo"
-                  variant="primary"
-                  endIcon={<EastIcon />}
-                />
+                <Link href="/demo" passHref>
+                  <Button
+                    btnText="Book a Demo"
+                    variant="primary"
+                    endIcon={<EastIcon />}
+                  />
+                </Link>
               </motion.div>
             </Col>
           </Row>

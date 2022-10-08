@@ -5,10 +5,13 @@ import Slider from "react-slick";
 import { Col, Container, Row } from "react-bootstrap";
 
 import Client1 from "assets/images/temp/client_1.jpg";
-import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
-import ArrowCircleLeftOutlinedIcon from "@mui/icons-material/ArrowCircleLeftOutlined";
 
-const SuccessSlider = () => {
+import RightArrowLight from "assets/images/right-light.svg";
+import LeftArrowLight from "assets/images/left-light.svg";
+import RightArrowDark from "assets/images/right-dark.svg";
+import LeftArrowDark from "assets/images/left-dark.svg";
+
+const SuccessSlider = ({ isLight }) => {
   const settings = {
     dots: true,
     infinite: false,
@@ -17,13 +20,22 @@ const SuccessSlider = () => {
     slidesToScroll: 1,
     nextArrow: (
       <div>
-        <ArrowCircleRightOutlinedIcon />,
+        {isLight ? (
+          <Image src={RightArrowLight} alt="RightArrowLight" />
+        ) : (
+          <Image src={RightArrowDark} alt="RightArrowDark" />
+        )}
+        ,
       </div>
     ),
 
     prevArrow: (
       <div>
-        <ArrowCircleLeftOutlinedIcon />,
+        {isLight ? (
+          <Image src={LeftArrowLight} alt="LeftArrowLight" />
+        ) : (
+          <Image src={LeftArrowDark} alt="LeftArrowDark" />
+        )}
       </div>
     ),
     responsive: [
@@ -55,7 +67,7 @@ const SuccessSlider = () => {
   };
 
   return (
-    <div className="success-story-container">
+    <div className={`success-story-container ${isLight ? "light" : ""}`}>
       <Container>
         <Typography level="h2" text="Success Stories" />
         <div className="slider-block">
@@ -76,7 +88,19 @@ const SuccessSlider = () => {
               </Row>
             </div>
             <div className="slider-content">
-              <h3>2</h3>
+              <Row>
+                <Col xs={12} md={4}>
+                  <Image src={Client1} alt="BannerImg" />
+                </Col>
+                <Col xs={12} md={8}>
+                  <Typography
+                    level="p1"
+                    text="‘Product Name’ is very easy to use, workflows are very helpful and being able to share jobs and candidates across our organization is a tremendous time saver. Having all hiring managers and recruiters on one platform has allowed us to streamline the hiring process, saving us at least 100+ hours of follow-up time."
+                  />
+                  <h2 className="ss-client-name">Jason Ross</h2>
+                  <p className="ss-client-position">HR Manager at YMK Ltd.</p>
+                </Col>
+              </Row>
             </div>
             <div className="slider-content">
               <h3>3</h3>

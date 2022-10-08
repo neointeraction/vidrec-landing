@@ -8,6 +8,6 @@ export { default as ClientStrip } from "./ClientStrip";
 export { default as VerticalTabs } from "./VerticalTabs";
 export { default as SuccessSlider } from "./SuccessSlider";
 export { default as Card } from "./Card";
-export { default as Pricing } from "./Pricing";
+export { default as PricingCards } from "./PricingCards";
 export { default as ExploreBanner } from "./ExploreBanner";
 export { default as HRSlider } from "./HRSlider";

@@ -16,24 +16,21 @@ import {
 import {
   Typography,
   Button,
-  ActionStrip,
-  InterviewCompareCard,
-  ClientStrip,
-  VerticalTabs,
-  SuccessSlider,
   Card,
   PricingCards,
+  ActionStrip,
+  VerticalTabs,
+  SuccessSlider,
   ExploreBanner,
 } from "components";
 
-import BannerImg from "assets/images/bannerImg.png";
 import Efficiency from "assets/images/efficiency.png";
 import Integration from "assets/images/Integration.png";
 import Workflow from "assets/images/Workflow.png";
 import AI from "assets/images/AI.png";
 import EastIcon from "@mui/icons-material/East";
 
-import CardIg from "assets/images/temp/box.jpg";
+import CardIg from "assets/images/feature1.svg";
 import Link from "next/link";
 
 const whyUseTabData = [
@@ -87,45 +84,66 @@ const whyUseTabData = [
   },
 ];
 
-const candidateCards = [
+const featureData = [
   {
     img: CardIg,
-    title: "Create an impactful first impression",
+    title: "Create Job Listings with Ease",
     subtext: "Two line sentence about this process",
   },
   {
     img: CardIg,
-    title: "Easy Application Submission",
+    title: "Access to Interview Builder ",
     subtext: "Two line sentence about this process",
   },
   {
     img: CardIg,
-    title: "Create & Manage Video Resumes",
+    title: "Manage data on Dashboard",
+    subtext: "Two line sentence about this process",
+  },
+  {
+    img: CardIg,
+    title: "Hire the best with AI based tech",
+    subtext: "Two line sentence about this process",
+  },
+  {
+    img: CardIg,
+    title: "Witness the passion in the candidate ",
+    subtext: "Two line sentence about this process",
+  },
+  {
+    img: CardIg,
+    title: "Share Interview recordings to team/external experts",
+    subtext: "Two line sentence about this process",
+  },
+  {
+    img: CardIg,
+    title: "See important attributes of candidates",
+    subtext: "Two line sentence about this process",
+  },
+  {
+    img: CardIg,
+    title: "Hire based on overall feedback ",
+    subtext: "Two line sentence about this process",
+  },
+  {
+    img: CardIg,
+    title: "Excellent integrations with other platforms",
     subtext: "Two line sentence about this process",
   },
 ];
 
-export default function Home() {
+const Pricing = () => {
   const comparison = useAnimation();
-  const clients = useAnimation();
   const whyUse = useAnimation();
   const trySection = useAnimation();
-  const forCandidate = useAnimation();
-  const pricing = useAnimation();
 
   const [refComparison, inViewComparison] = useInView();
-  const [refClients, inViewClients] = useInView();
   const [refWhyUse, inViewWhyUse] = useInView();
   const [refTry, inViewTry] = useInView();
-  const [refForCandidate, inViewForCandidate] = useInView();
-  const [refPricing, inViewPricing] = useInView();
 
   useEffect(() => {
     if (inViewComparison) {
       comparison.start("visible");
-    }
-    if (inViewClients) {
-      clients.start("visible");
     }
     if (inViewWhyUse) {
       whyUse.start("visible");
@@ -133,79 +151,52 @@ export default function Home() {
     if (inViewTry) {
       trySection.start("visible");
     }
-    if (inViewForCandidate) {
-      forCandidate.start("visible");
-    }
-    if (inViewPricing) {
-      pricing.start("visible");
-    }
   }, [
-    clients,
     comparison,
     whyUse,
     trySection,
-    forCandidate,
-    pricing,
 
     inViewComparison,
-    inViewClients,
     inViewWhyUse,
     inViewTry,
-    inViewForCandidate,
-    inViewPricing,
   ]);
 
   return (
     <div>
-      <div className="section-margin mt-2">
+      <div className="section-margin mt-2 candidate-banner">
         <Container>
           <Head>
-            <title>VidRec</title>
+            <title>VidRec | Pricing</title>
             <meta name="description" content="VidRec web" />
-            {/* <link rel="icon" href="/favicon.ico" /> */}
           </Head>
-          <Row className="align-center">
-            <Col xs={12} md={6}>
-              <motion.div animate={{ x: [-100, 0], opacity: [0, 1] }}>
+          <Row>
+            <Col xs={12}>
+              <motion.div animate={{ y: [-100, 0], opacity: [0, 1] }}>
                 <Typography
                   level="h1"
-                  text={
-                    <>
-                      Accelerate your Hiring Process by upto{" "}
-                      <span className="highlight">80%</span>
-                    </>
-                  }
+                  text={<>Get started right away with flexible plans</>}
                 />
               </motion.div>
               <motion.div
-                animate={{ x: [-100, 0], opacity: [0, 1] }}
+                animate={{ y: [100, 0], opacity: [0, 1] }}
                 transition={{ ease: "easeOut", delay: 0.5 }}
               >
                 <div className="subtitle-block">
                   <Typography
                     level="p1"
-                    text="We assist recruiters worldwide engage, interview, and hire better employees while assisting fresh graduates in getting hired."
+                    text="Find plans based on your 
+                    company’s requirements"
                   />
                 </div>
               </motion.div>
+
+              {/* bannerimage  */}
               <motion.div
-                animate={{ y: [50, 0], opacity: [0, 1] }}
-                transition={{ ease: "easeOut", delay: 1 }}
+                animate={{ opacity: [1, 1] }}
+                transition={{ delay: 1 }}
+                className="margin-container mb-0"
               >
-                <div className="mt-4">
-                  <Link href={"/employer"} passHref>
-                    <Button btnText="Employer" variant="Primary" />
-                  </Link>
-                </div>
-              </motion.div>
-            </Col>
-            <Col xs={12} md={6}>
-              <motion.div
-                animate={{ opacity: [0, 1] }}
-                transition={{ ease: "easeOut", delay: 1 }}
-                className="banner-img-block"
-              >
-                <Image src={BannerImg} alt="BannerImg" />
+                <PricingCards />
               </motion.div>
             </Col>
           </Row>
@@ -217,13 +208,9 @@ export default function Home() {
           transition={{ ease: "easeOut", delay: 1.2 }}
         >
           <ActionStrip
-            text={
-              <>
-                Learn to stand-out from the crowd with your
-                <span className="highlight-yellow"> Video Resume.</span>
-              </>
-            }
-            btnText="Candidates"
+            text={<>Lifetime free package for candidates</>}
+            btnText="Create a profile"
+            hasBtnArrow
             onClick={() => {}}
           />
         </motion.div>
@@ -239,14 +226,17 @@ export default function Home() {
           >
             <Typography
               level="h2"
-              text={
-                <>
-                  With <span className="highlight">‘Product Name’ </span>
-                  Hiring Managers can overcome the long & frustrating hiring
-                  process
-                </>
-              }
+              text={<>Features that will help your hiring process</>}
             />
+          </motion.div>
+          <motion.div
+            ref={refComparison}
+            initial="hidden"
+            animate={comparison}
+            variants={subTitleAnimation}
+            className="section-title-block"
+          >
+            <Typography level="p1" text="Make fast paced scouting with ease" />
           </motion.div>
           <motion.div
             ref={refComparison}
@@ -254,44 +244,23 @@ export default function Home() {
             animate={comparison}
             variants={blockAnimation}
           >
-            <InterviewCompareCard />
+            <div>
+              <Row>
+                {featureData.map((item, index) => (
+                  <Col xs={12} md={4} key={index}>
+                    <Card
+                      cardImg={item.img}
+                      title={item.title}
+                      subtitle={item.subtext}
+                    />
+                  </Col>
+                ))}
+              </Row>
+            </div>
           </motion.div>
         </Container>
       </div>
-      <div className="section-margin centered">
-        <Container>
-          <motion.div
-            ref={refClients}
-            initial="hidden"
-            animate={clients}
-            variants={titleAnimation}
-            className="section-title-block"
-          >
-            <Typography level="h2" text="Trusted by the best organizations" />
-          </motion.div>
-          <motion.div
-            ref={refClients}
-            initial="hidden"
-            animate={clients}
-            variants={subTitleAnimation}
-            className="section-title-block"
-          >
-            <Typography
-              level="p1"
-              text="Companies that use ‘Product Name’ to 
-              hire their future leaders"
-            />
-          </motion.div>
-          <motion.div
-            ref={refClients}
-            initial="hidden"
-            animate={clients}
-            variants={blockAnimation}
-          >
-            <ClientStrip />
-          </motion.div>
-        </Container>
-      </div>
+
       <div className="section-margin centered">
         <Container>
           <motion.div
@@ -305,7 +274,8 @@ export default function Home() {
               level="h2"
               text={
                 <>
-                  Why Use <span className="highlight">‘Product Name’ </span> ?
+                  How can <span className="highlight">‘Product Name’ </span>{" "}
+                  make Hiring easy??
                 </>
               }
             />
@@ -319,7 +289,8 @@ export default function Home() {
           >
             <Typography
               level="p1"
-              text="A video-based solution that is sure to enhance your Hiring Experience"
+              text="A video-based solution that is sure to enhance your
+              Hiring Experience"
             />
           </motion.div>
           <motion.div
@@ -339,7 +310,9 @@ export default function Home() {
           />
         </Container>
       </div>
+
       <SuccessSlider />
+
       <div className="section-margin">
         <Container>
           <Row className="align-center">
@@ -383,78 +356,9 @@ export default function Home() {
           </Row>
         </Container>
       </div>
-      <div className="section-margin centered greyed">
-        <Container>
-          <motion.div
-            ref={refForCandidate}
-            initial="hidden"
-            animate={forCandidate}
-            variants={titleAnimation}
-            className="section-title-block"
-          >
-            <Typography level="h2" text={<>For Candidates</>} />
-          </motion.div>
-          <motion.div
-            ref={refForCandidate}
-            initial="hidden"
-            animate={forCandidate}
-            variants={subTitleAnimation}
-            className="section-title-block"
-          >
-            <Typography
-              level="p1"
-              text="We don't let interviewers leave you hanging, obtain feedbacks from industry experts and grow."
-            />
-          </motion.div>
-          <motion.div
-            ref={refForCandidate}
-            initial="hidden"
-            animate={forCandidate}
-            variants={blockAnimation}
-          >
-            <div className="margin-container">
-              <Row>
-                {candidateCards.map((item, index) => (
-                  <Col key={index}>
-                    <Card
-                      cardImg={item.img}
-                      title={item.title}
-                      subtitle={item.subtext}
-                    />
-                  </Col>
-                ))}
-              </Row>
-            </div>
-          </motion.div>
-          <Button
-            btnText="Create a profile"
-            variant="secondary"
-            endIcon={<EastIcon />}
-          />
-        </Container>
-      </div>
-      <div className="section-margin centered">
-        <Container>
-          <motion.div
-            ref={refPricing}
-            initial="hidden"
-            animate={pricing}
-            variants={titleAnimation}
-            className="section-title-block"
-          >
-            <Typography level="h2" text={<>Pricing</>} />
-            <Typography
-              level="p1"
-              text="Find plans based on your company’s requirements."
-            />
-          </motion.div>
-
-          <div className="margin-container">
-            <PricingCards noDelay />
-          </div>
-        </Container>
-      </div>
       <ExploreBanner />
     </div>
   );
-}
+};
+
+export default Pricing;

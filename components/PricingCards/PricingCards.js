@@ -1,14 +1,58 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Col, Row } from "react-bootstrap";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 import { Button } from "components";
 
-const Pricing = () => {
+const PricingCards = ({ noDelay }) => {
+  const pricingComponent = useAnimation();
+  const [refPricingComponent, inViewPricingComponent] = useInView();
+
+  useEffect(() => {
+    if (inViewPricingComponent) {
+      pricingComponent.start("visible");
+    }
+  }, [pricingComponent, inViewPricingComponent]);
+
+  const boxLeft = {
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { ease: "easeOut", duration: 0.5, delay: noDelay ? 0 : 0.7 },
+    },
+    hidden: { opacity: 0, x: -50 },
+  };
+
+  const boxCenter = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { ease: "easeOut", duration: 0.5, delay: noDelay ? 0 : 0.7 },
+    },
+    hidden: { opacity: 0, y: 100 },
+  };
+
+  const boxRight = {
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { ease: "easeOut", duration: 0.5, delay: noDelay ? 0 : 0.7 },
+    },
+    hidden: { opacity: 0, x: 50 },
+  };
+
   return (
     <div>
       <Row className="align-center">
         <Col>
-          <div className="pricing-card">
+          <motion.div
+            ref={refPricingComponent}
+            initial="hidden"
+            animate={pricingComponent}
+            variants={boxLeft}
+            className="pricing-card"
+          >
             <div>
               <h3 className="plan-name">Free</h3>
               <h1 className="price-text">
@@ -24,10 +68,16 @@ const Pricing = () => {
               <h4 className="pc-text">Use all features of the Starter Plan.</h4>
             </div>
             <Button btnText="Start FREE Trial!" variant="Primary" />
-          </div>
+          </motion.div>
         </Col>
         <Col>
-          <div className="pricing-card xl">
+          <motion.div
+            ref={refPricingComponent}
+            initial="hidden"
+            animate={pricingComponent}
+            variants={boxCenter}
+            className="pricing-card xl"
+          >
             <div>
               <h3 className="plan-name">Starter</h3>
               <h1 className="price-text">
@@ -49,10 +99,16 @@ const Pricing = () => {
               </div>
             </div>
             <Button btnText="Get Started!" variant="Primary" />
-          </div>
+          </motion.div>
         </Col>
         <Col>
-          <div className="pricing-card">
+          <motion.div
+            ref={refPricingComponent}
+            initial="hidden"
+            animate={pricingComponent}
+            variants={boxRight}
+            className="pricing-card"
+          >
             <div>
               <h3 className="plan-name">Enterprise</h3>
               <h1 className="price-text">
@@ -75,11 +131,11 @@ const Pricing = () => {
               </div>
             </div>
             <Button btnText="Get Started!" />
-          </div>
+          </motion.div>
         </Col>
       </Row>
     </div>
   );
 };
 
-export default Pricing;
+export default PricingCards;

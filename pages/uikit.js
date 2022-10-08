@@ -5,7 +5,16 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import EastIcon from "@mui/icons-material/East";
 
 // comsponents
-import { ActionStrip, Button, Footer, Header, Typography } from "components";
+import {
+  ActionStrip,
+  Button,
+  ExploreBanner,
+  Footer,
+  Header,
+  PricingCards,
+  SuccessSlider,
+  Typography,
+} from "components";
 
 const uikit = () => {
   return (
@@ -98,6 +107,41 @@ const uikit = () => {
                     btnText="Candidates"
                     onClick={() => {}}
                   />
+                </Card.Body>
+              </Card>
+            </div>
+          </Col>
+          <Col sm={12}>
+            <div style={{ padding: "20px 0" }}>
+              <Card>
+                <Card.Header>Slider</Card.Header>
+                <Card.Body>
+                  <h3>Dark</h3>
+                  <SuccessSlider />
+                  <div style={{ padding: "20px 0" }}>
+                    <h3>Light</h3>
+                    <SuccessSlider isLight />
+                  </div>
+                </Card.Body>
+              </Card>
+            </div>
+          </Col>
+          <Col sm={12}>
+            <div style={{ padding: "20px 0" }}>
+              <Card>
+                <Card.Header>Explore Banner</Card.Header>
+                <Card.Body>
+                  <ExploreBanner />
+                </Card.Body>
+              </Card>
+            </div>
+          </Col>
+          <Col sm={12}>
+            <div style={{ padding: "20px 0" }}>
+              <Card>
+                <Card.Header>Pricing</Card.Header>
+                <Card.Body>
+                  <PricingCards />
                 </Card.Body>
               </Card>
             </div>

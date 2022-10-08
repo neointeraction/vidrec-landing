@@ -2,17 +2,15 @@ import React, { useEffect } from "react";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Container } from "react-bootstrap";
+
+import {
+  titleAnimation,
+  subTitleAnimation,
+  blockAnimation,
+} from "animation/variables";
+
 import { Typography, Button } from "components";
-
-const titleAnimation = {
-  visible: { opacity: 1, y: 0, transition: { ease: "easeOut", duration: 0.5 } },
-  hidden: { opacity: 0, y: -50 },
-};
-
-const blockAnimation = {
-  visible: { opacity: 1, transition: { ease: "easeOut", duration: 1.5 } },
-  hidden: { opacity: 0 },
-};
+import Link from "next/link";
 
 const ExploreBanner = () => {
   const explore = useAnimation();
@@ -35,6 +33,14 @@ const ExploreBanner = () => {
           className="section-title-block"
         >
           <Typography level="h2" text={<>Explore ‘Product Name’</>} />
+        </motion.div>
+        <motion.div
+          ref={refExplore}
+          initial="hidden"
+          animate={explore}
+          variants={subTitleAnimation}
+          className="section-title-block"
+        >
           <Typography
             level="p1"
             text="The right platform for a hassle free hiring
@@ -48,8 +54,12 @@ const ExploreBanner = () => {
           variants={blockAnimation}
         >
           <div className="margin-container d-flex justify-content-center mb-0">
-            <Button btnText="Employer" />
-            <Button btnText="Candidate" variant="secondary" />
+            <Link href="/employer" passHref>
+              <Button btnText="Employer" />
+            </Link>
+            <Link href="/candidate" passHref>
+              <Button btnText="Candidate" variant="secondary" />
+            </Link>
           </div>
         </motion.div>
       </Container>

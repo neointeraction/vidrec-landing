@@ -13,16 +13,68 @@ import {
   blockAnimation,
 } from "animation/variables";
 
-import { Typography, Button, Card, HRSlider } from "components";
+import {
+  Typography,
+  Button,
+  InterviewCompareCard,
+  SuccessSlider,
+  Card,
+  ExploreBanner,
+} from "components";
 
 import BannerImg from "assets/images/candidate-banner.png";
 import EastIcon from "@mui/icons-material/East";
-import W1 from "assets/images/w1.jpg";
-import W2 from "assets/images/w2.jpg";
-import W3 from "assets/images/w3.jpg";
 
-import CardIg from "assets/images/temp/box.jpg";
+import CardIg from "assets/images/feature1.svg";
 import Link from "next/link";
+
+const featureData = [
+  {
+    img: CardIg,
+    title: "Create Job Listings with Ease",
+    subtext: "Two line sentence about this process",
+  },
+  {
+    img: CardIg,
+    title: "Access to Interview Builder ",
+    subtext: "Two line sentence about this process",
+  },
+  {
+    img: CardIg,
+    title: "Manage data on Dashboard",
+    subtext: "Two line sentence about this process",
+  },
+  {
+    img: CardIg,
+    title: "Hire the best with AI based tech",
+    subtext: "Two line sentence about this process",
+  },
+  {
+    img: CardIg,
+    title: "Witness the passion in the candidate ",
+    subtext: "Two line sentence about this process",
+  },
+  {
+    img: CardIg,
+    title: "Share Interview recordings to team/external experts",
+    subtext: "Two line sentence about this process",
+  },
+  {
+    img: CardIg,
+    title: "See important attributes of candidates",
+    subtext: "Two line sentence about this process",
+  },
+  {
+    img: CardIg,
+    title: "Hire based on overall feedback ",
+    subtext: "Two line sentence about this process",
+  },
+  {
+    img: CardIg,
+    title: "Excellent integrations with other platforms",
+    subtext: "Two line sentence about this process",
+  },
+];
 
 const candidateCards = [
   {
@@ -40,9 +92,24 @@ const candidateCards = [
     title: "Create & Manage Video Resumes",
     subtext: "Two line sentence about this process",
   },
+  {
+    img: CardIg,
+    title: "Stand-out from the crowd",
+    subtext: "Two line sentence about this process",
+  },
+  {
+    img: CardIg,
+    title: "Get the right feedback to improve your skills",
+    subtext: "Two line sentence about this process",
+  },
+  {
+    img: CardIg,
+    title: "Show your passion with right emotions",
+    subtext: "Two line sentence about this process",
+  },
 ];
 
-const Candidate = () => {
+const Feature = () => {
   const comparison = useAnimation();
   const clients = useAnimation();
   const whyUse = useAnimation();
@@ -94,56 +161,58 @@ const Candidate = () => {
 
   return (
     <div>
-      <div className="section-margin mt-2 candidate-banner">
+      <div className="section-margin mt-2">
         <Container>
           <Head>
-            <title>VidRec</title>
+            <title>VidRec | Feature</title>
             <meta name="description" content="VidRec web" />
+            {/* <link rel="icon" href="/favicon.ico" /> */}
           </Head>
           <Row className="align-center">
-            <Col xs={12}>
-              <motion.div animate={{ y: [-100, 0], opacity: [0, 1] }}>
+            <Col xs={12} md={6}>
+              <motion.div animate={{ x: [-100, 0], opacity: [0, 1] }}>
                 <Typography
                   level="h1"
                   text={
                     <>
-                      There is <span className="highlight">70%</span> more
-                      chance to get hired with a Video Resume
+                      Streamline <span className="highlight">90%</span> of your
+                      hiring & career processes
                     </>
                   }
                 />
               </motion.div>
               <motion.div
-                animate={{ y: [100, 0], opacity: [0, 1] }}
+                animate={{ x: [-100, 0], opacity: [0, 1] }}
                 transition={{ ease: "easeOut", delay: 0.5 }}
               >
                 <div className="subtitle-block">
                   <Typography
                     level="p1"
-                    text="Two sentence line about how candidates
-                    can use the tool to their get hired."
+                    text="We help Recruiters Worldwide Engage, 
+                    Interview, and Hire Better Employees while
+                    assiting fresh graduates in getting hired."
                   />
                 </div>
               </motion.div>
               <motion.div
-                animate={{ y: [50, 0], opacity: [0, 1], zIndex: 1 }}
+                animate={{ y: [50, 0], opacity: [0, 1] }}
                 transition={{ ease: "easeOut", delay: 1 }}
               >
-                <div className="mt-4">
+                <div className="banner-action-flex mt-4">
                   <Link href={"/employer"} passHref>
-                    <Button
-                      btnText="Upgrade your resume for FREE!"
-                      variant="secondary"
-                      endIcon={<EastIcon />}
-                    />
+                    <Button btnText="Employer" variant="primary" />
+                  </Link>
+                  <Link href={"/candidate"} passHref>
+                    <Button btnText="Candidate" variant="secondary" />
                   </Link>
                 </div>
               </motion.div>
-              {/* bannerimage  */}
+            </Col>
+            <Col xs={12} md={6}>
               <motion.div
-                animate={{ opacity: [0, 1], zIndex: -1 }}
+                animate={{ opacity: [0, 1] }}
                 transition={{ ease: "easeOut", delay: 1 }}
-                className="banner-img-block candidate-banner-image"
+                className="banner-img-block"
               >
                 <Image src={BannerImg} alt="BannerImg" />
               </motion.div>
@@ -151,7 +220,55 @@ const Candidate = () => {
           </Row>
         </Container>
       </div>
-      <div className="section-margin centered greyed">
+
+      <div className="section-margin centered ">
+        <Container>
+          <motion.div
+            ref={refWhyUse}
+            initial="hidden"
+            animate={whyUse}
+            variants={titleAnimation}
+            className="section-title-block"
+          >
+            <Typography level="h2" text={<>For Employers</>} />
+          </motion.div>
+          <motion.div
+            ref={refWhyUse}
+            initial="hidden"
+            animate={whyUse}
+            variants={subTitleAnimation}
+            className="section-title-block"
+          >
+            <Typography
+              level="p1"
+              text="With our tool you can learn to ace 
+              your next interview."
+            />
+          </motion.div>
+          <motion.div
+            ref={refWhyUse}
+            initial="hidden"
+            animate={whyUse}
+            variants={blockAnimation}
+          >
+            <div>
+              <Row>
+                {featureData.map((item, index) => (
+                  <Col xs={12} md={4} key={index}>
+                    <Card
+                      cardImg={item.img}
+                      title={item.title}
+                      subtitle={item.subtext}
+                    />
+                  </Col>
+                ))}
+              </Row>
+            </div>
+          </motion.div>
+        </Container>
+      </div>
+
+      <div className="section-margin centered">
         <Container>
           <motion.div
             ref={refComparison}
@@ -164,7 +281,9 @@ const Candidate = () => {
               level="h2"
               text={
                 <>
-                  With <span className="highlight">‘Product Name’</span> you can
+                  With <span className="highlight">‘Product Name’ </span>
+                  Hiring Managers can overcome the long & frustrating hiring
+                  process
                 </>
               }
             />
@@ -173,6 +292,71 @@ const Candidate = () => {
             ref={refComparison}
             initial="hidden"
             animate={comparison}
+            variants={blockAnimation}
+          >
+            <InterviewCompareCard />
+          </motion.div>
+        </Container>
+      </div>
+
+      <SuccessSlider isLight />
+      <Container>
+        <div className="section-margin greyed-inside">
+          <Row className="align-center">
+            <Col>
+              <motion.div
+                ref={refTry}
+                initial="hidden"
+                animate={trySection}
+                variants={titleLeftAnimation}
+              >
+                <Typography
+                  level="h2"
+                  text={
+                    <>
+                      Try <span className="highlight">‘Product Name’ </span> ?
+                    </>
+                  }
+                />
+                <Typography
+                  level="p1"
+                  text="The right platform for a hassle free hiring "
+                />
+              </motion.div>
+            </Col>
+            <Col className="text-right">
+              <motion.div
+                ref={refTry}
+                initial="hidden"
+                animate={trySection}
+                variants={blockAnimation}
+              >
+                <Button
+                  btnText="Book a Demo"
+                  variant="primary"
+                  endIcon={<EastIcon />}
+                />
+              </motion.div>
+            </Col>
+          </Row>
+        </div>
+      </Container>
+      <div className="section-margin centered">
+        <Container>
+          <motion.div
+            ref={refForCandidate}
+            initial="hidden"
+            animate={forCandidate}
+            variants={titleAnimation}
+            className="section-title-block"
+          >
+            <Typography level="h2" text={<>For Candidates</>} />
+          </motion.div>
+
+          <motion.div
+            ref={refForCandidate}
+            initial="hidden"
+            animate={forCandidate}
             variants={subTitleAnimation}
             className="section-title-block"
           >
@@ -182,69 +366,15 @@ const Candidate = () => {
             />
           </motion.div>
           <motion.div
-            ref={refComparison}
+            ref={refForCandidate}
             initial="hidden"
-            animate={comparison}
+            animate={forCandidate}
             variants={blockAnimation}
           >
-            <div className="margin-container">
+            <div>
               <Row>
                 {candidateCards.map((item, index) => (
-                  <Col key={index}>
-                    <Card
-                      cardImg={item.img}
-                      title={item.title}
-                      subtitle={item.subtext}
-                    />
-                  </Col>
-                ))}
-              </Row>
-            </div>
-          </motion.div>
-        </Container>
-      </div>
-      <div className="section-margin centered ">
-        <Container>
-          <motion.div
-            ref={refClients}
-            initial="hidden"
-            animate={clients}
-            variants={titleAnimation}
-            className="section-title-block"
-          >
-            <Typography
-              level="h2"
-              text={
-                <>
-                  How can <span className="highlight">‘Product Name’</span> help
-                  you get hired?
-                </>
-              }
-            />
-          </motion.div>
-          <motion.div
-            ref={refClients}
-            initial="hidden"
-            animate={clients}
-            variants={subTitleAnimation}
-            className="section-title-block"
-          >
-            <Typography
-              level="p1"
-              text="With our tool you can learn to ace 
-              your next interview."
-            />
-          </motion.div>
-          <motion.div
-            ref={refClients}
-            initial="hidden"
-            animate={clients}
-            variants={blockAnimation}
-          >
-            <div className="margin-container">
-              <Row>
-                {candidateCards.map((item, index) => (
-                  <Col key={index}>
+                  <Col xs={12} md={4} key={index}>
                     <Card
                       cardImg={item.img}
                       title={item.title}
@@ -258,188 +388,14 @@ const Candidate = () => {
         </Container>
       </div>
 
-      <HRSlider />
-      <div className="section-margin centered ">
-        <Container>
-          <motion.div
-            ref={refWhyUse}
-            initial="hidden"
-            animate={whyUse}
-            variants={titleAnimation}
-            className="section-title-block"
-          >
-            <Typography
-              level="h2"
-              text={
-                <>
-                  Get notified on the tip of your fingers with our ‘WhatsApp’
-                  integration
-                </>
-              }
-            />
-          </motion.div>
-          <motion.div
-            ref={refWhyUse}
-            initial="hidden"
-            animate={whyUse}
-            variants={subTitleAnimation}
-            className="section-title-block"
-          >
-            <Typography
-              level="p1"
-              text="Always stay updated with your job applications
-              and view reviews on the go."
-            />
-          </motion.div>
-          <motion.div
-            ref={refWhyUse}
-            initial="hidden"
-            animate={whyUse}
-            variants={blockAnimation}
-          >
-            <div className="margin-container">
-              <Row className="justify-content-center gx-16-minus">
-                <Col>
-                  <Image src={W1} alt="W1" />
-                </Col>
-                <Col>
-                  <Image src={W2} alt="W2" />
-                </Col>
-                <Col>
-                  <Image src={W3} alt="W3" />
-                </Col>
-              </Row>
-            </div>
-          </motion.div>
-        </Container>
-      </div>
-
-      <Container>
-        <div className="section-margin greyed-inside">
-          <Row className="align-center">
-            <Col xs={12} md={6}>
-              <motion.div
-                ref={refPricing}
-                initial="hidden"
-                animate={pricing}
-                variants={titleLeftAnimation}
-              >
-                <Typography
-                  level="h2"
-                  text={
-                    <>
-                      Use <span className="highlight">‘Product Name’ </span>
-                      and get hired!
-                    </>
-                  }
-                />
-              </motion.div>
-              <motion.div
-                ref={refPricing}
-                initial="hidden"
-                animate={pricing}
-                variants={titleLeftAnimation}
-              >
-                <div className="subtitle-block">
-                  <ul className="checked-list">
-                    <li>Create unlimited video resumes</li>
-                    <li>Manage your interviews with on a Dashboard</li>
-                    <li>Get direct updates on WhatsApp</li>
-                    <li>Get access to exclusive Hiring Guides</li>
-                    <li>Easy application submission</li>
-                    <li>
-                      Talk to HR experts and professional from your field{" "}
-                      <span>(*starting from INR 200)</span>
-                    </li>
-                  </ul>
-                </div>
-              </motion.div>
-              <motion.div
-                ref={refPricing}
-                initial="hidden"
-                animate={pricing}
-                variants={blockAnimation}
-              >
-                <div className="mt-4">
-                  <Link href={"/"} passHref>
-                    <Button
-                      btnText="Upgrade your resume for FREE!"
-                      variant="secondary"
-                      endIcon={<EastIcon />}
-                    />
-                  </Link>
-                </div>
-              </motion.div>
-            </Col>
-            <Col xs={12} md={6}>
-              <motion.div
-                ref={refPricing}
-                initial="hidden"
-                animate={pricing}
-                variants={blockAnimation}
-              >
-                <Image src={BannerImg} alt="BannerImg" />
-              </motion.div>
-            </Col>
-          </Row>
-        </div>
-      </Container>
-
-      <div className="section-margin centered ">
-        <Container>
-          <motion.div
-            ref={refForCandidate}
-            initial="hidden"
-            animate={forCandidate}
-            variants={titleAnimation}
-            className="section-title-block"
-          >
-            <Typography level="h2" text={<>Check out our Hiring Guides</>} />
-          </motion.div>
-          <motion.div
-            ref={refForCandidate}
-            initial="hidden"
-            animate={forCandidate}
-            variants={subTitleAnimation}
-            className="section-title-block"
-          >
-            <Typography
-              level="p1"
-              text="With our tool you can learn to ace 
-              your next interview."
-            />
-          </motion.div>
-          <motion.div
-            ref={refForCandidate}
-            initial="hidden"
-            animate={forCandidate}
-            variants={blockAnimation}
-          >
-            <div className="margin-container">
-              <Row>
-                {candidateCards.map((item, index) => (
-                  <Col key={index}>
-                    <Card cardImg={item.img} title={item.title} />
-                  </Col>
-                ))}
-              </Row>
-            </div>
-          </motion.div>
-          <Button
-            btnText="Read More"
-            variant="tertiary"
-            endIcon={<EastIcon />}
-          />
-        </Container>
-      </div>
       <Container>
         <div className="section-margin greyed-inside">
           <Row className="align-center">
             <Col xs={12} md={8}>
               <motion.div
-                ref={refTry}
+                ref={refPricing}
                 initial="hidden"
-                animate={trySection}
+                animate={pricing}
                 variants={titleLeftAnimation}
               >
                 <Typography level="h2" text={<>Setup your Video Resume</>} />
@@ -451,9 +407,9 @@ const Candidate = () => {
             </Col>
             <Col xs={12} md={4} className="text-right">
               <motion.div
-                ref={refTry}
+                ref={refPricing}
                 initial="hidden"
-                animate={trySection}
+                animate={pricing}
                 variants={blockAnimation}
               >
                 <Button
@@ -466,8 +422,10 @@ const Candidate = () => {
           </Row>
         </div>
       </Container>
+
+      <ExploreBanner />
     </div>
   );
 };
 
-export default Candidate;
+export default Feature;

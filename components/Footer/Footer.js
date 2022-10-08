@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Container, Row, Col } from "react-bootstrap";
 
 import NeoLogo from "assets/images/neointeraction_logo.svg";
@@ -24,10 +25,18 @@ const Footer = () => {
                 <Col>
                   <h4 className="Footer-title">Products</h4>
                   <ul className="footer-list">
-                    <li className="fl-item">Features</li>
-                    <li className="fl-item">Employer</li>
-                    <li className="fl-item">Candidate</li>
-                    <li className="fl-item">Pricing</li>
+                    <li className="fl-item">
+                      <Link href="/feature">Features</Link>
+                    </li>
+                    <li className="fl-item">
+                      <Link href="/employer">Employer</Link>
+                    </li>
+                    <li className="fl-item">
+                      <Link href="/candidate">Candidate</Link>
+                    </li>
+                    <li className="fl-item">
+                      <Link href="/pricing">Pricing</Link>
+                    </li>
                   </ul>
                 </Col>
                 <Col>
@@ -39,14 +48,20 @@ const Footer = () => {
                 <Col>
                   <h4 className="Footer-title">Get in Touch</h4>
                   <ul className="footer-list">
-                    <li className="fl-item">Contact</li>
-                    <li className="fl-item">Book a Demo</li>
+                    <li className="fl-item">
+                      <Link href="/contact">Contact</Link>
+                    </li>
+                    <li className="fl-item">
+                      <Link href="/demo">Book a Demo</Link>
+                    </li>
                   </ul>
                 </Col>
                 <Col>
                   <h4 className="Footer-title">Legal</h4>
                   <ul className="footer-list">
-                    <li className="fl-item">Privacy Policy</li>
+                    <li className="fl-item">
+                      <Link href="/privacy">Privacy Policy</Link>
+                    </li>
                     <li className="fl-item">Terms of Service</li>
                   </ul>
                 </Col>

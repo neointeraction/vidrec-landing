@@ -5,10 +5,13 @@ import Slider from "react-slick";
 import { Col, Container, Row } from "react-bootstrap";
 
 import Client1 from "assets/images/temp/client_1.jpg";
-import ArrowCircleRightOutlinedIcon from "@mui/icons-material/ArrowCircleRightOutlined";
-import ArrowCircleLeftOutlinedIcon from "@mui/icons-material/ArrowCircleLeftOutlined";
 
-const HRSlider = () => {
+import RightArrowLight from "assets/images/right-light.svg";
+import LeftArrowLight from "assets/images/left-light.svg";
+import RightArrowDark from "assets/images/right-dark.svg";
+import LeftArrowDark from "assets/images/left-dark.svg";
+
+const HRSlider = ({ isLight }) => {
   const settings = {
     dots: true,
     infinite: false,
@@ -17,13 +20,22 @@ const HRSlider = () => {
     slidesToScroll: 1,
     nextArrow: (
       <div>
-        <ArrowCircleRightOutlinedIcon />,
+        {isLight ? (
+          <Image src={RightArrowLight} alt="RightArrowLight" />
+        ) : (
+          <Image src={RightArrowDark} alt="RightArrowDark" />
+        )}
+        ,
       </div>
     ),
 
     prevArrow: (
       <div>
-        <ArrowCircleLeftOutlinedIcon />,
+        {isLight ? (
+          <Image src={LeftArrowLight} alt="LeftArrowLight" />
+        ) : (
+          <Image src={LeftArrowDark} alt="LeftArrowDark" />
+        )}
       </div>
     ),
     responsive: [
