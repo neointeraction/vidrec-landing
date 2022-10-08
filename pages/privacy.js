@@ -39,14 +39,6 @@ const Privacy = () => {
       </div>
       <div className="section-margin">
         <Container>
-          {/* <motion.div
-            ref={refComparison}
-            initial="hidden"
-            animate={comparison}
-            variants={titleAnimation}
-          >
-            <Typography level="h2" text={<>Privacy Policy</>} />
-          </motion.div> */}
           <motion.div
             ref={refComparison}
             initial="hidden"
@@ -68,14 +60,14 @@ const Privacy = () => {
                       for our client. These Terms and Conditions and the
                       Quote/Production Estimate supplied to you form the
                       contract between us for the provision of Neointeraction
-                      Design Agency’s services and in the event of any dispute
+                      Design Agency's services and in the event of any dispute
                       are governed by the laws of India.
                     </>
                   }
                 />
               </div>
               <div className="privacy-section mb-2">
-                <Typography level="h2" text={<>Product Name’s Role</>} />
+                <Typography level="h2" text={<>Product Name's Role</>} />
                 <Typography
                   level="p1"
                   text={
@@ -99,7 +91,7 @@ const Privacy = () => {
                       Quote/Proposal, we include 2 rounds of changes on all
                       items following the presentation of an initial concept.
                       Revisions briefed thereafter will be charged according to
-                      Neointeraction Design’s standard hourly or fixed rate
+                      Neointeraction Design's standard hourly or fixed rate
                       card.
                     </>
                   }
@@ -108,9 +100,9 @@ const Privacy = () => {
                   level="p1"
                   text={
                     <>
-                      Information: To maximize Neointeraction Design Agency’s
+                      Information: To maximize Neointeraction Design Agency's
                       effectiveness we must work with you as a team. Often
-                      Neointeraction Design Agency’s work will be dependent on
+                      Neointeraction Design Agency's work will be dependent on
                       you (or your other advisers) providing information
                       promptly. To avoid unnecessary verification,
                       Neointeraction Design Agency will assume all information
@@ -136,7 +128,7 @@ const Privacy = () => {
                       Force Majeure: Neointeraction Design Agency shall not be
                       liable for any delay or failure to perform their
                       obligations where such delay or failure to perform arises
-                      from circumstances outside Neointeraction Design Agency’s
+                      from circumstances outside Neointeraction Design Agency's
                       reasonable control.
                     </>
                   }
@@ -149,7 +141,7 @@ const Privacy = () => {
                   text={
                     <>
                       Payment Terms: Invoices shall be settled by bank transfer
-                      into Neointeraction Design Agency’s nominated bank account
+                      into Neointeraction Design Agency's nominated bank account
                       within timeline agreed between Neointeraction Design
                       Agency and the client. Neointeraction Design retains
                       ownership of all work until full payment has been made.
@@ -160,7 +152,7 @@ const Privacy = () => {
                   level="p1"
                   text={
                     <>
-                      Other Specialist Services: Neointeraction Design Agency’s
+                      Other Specialist Services: Neointeraction Design Agency's
                       estimate is exclusive of third-party costs such as stock
                       images, plugins, fonts, photography, illustration, video
                       production, sound recording etc. unless otherwise included
@@ -219,7 +211,7 @@ const Privacy = () => {
                   level="p1"
                   text={
                     <>
-                      Neointeraction Design Agency’s affiliated or related
+                      Neointeraction Design Agency's affiliated or related
                       parties; and
                     </>
                   }
