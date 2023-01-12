@@ -81,17 +81,17 @@ body::-webkit-scrollbar-track {
 
 /* Handle */
 body::-webkit-scrollbar-thumb {
-  background: #4286f5;
+  background: #5a189a;
   border-radius: 8px;
 }
 
 /* Handle on hover */
 body::-webkit-scrollbar-thumb:hover {
-  background: #366fcc;
+  background: #340e59;
 }
 
 .highlight {
-  color: #4286f5 !important;
+  color: #5a189a !important;
 }
 
 .highlight-yellow {
@@ -200,7 +200,7 @@ body::-webkit-scrollbar-thumb:hover {
   border: none;
   cursor: pointer;
   transition: 0.3s all ease-in-out;
-  background: #4286f5;
+  background: #5a189a;
   border-radius: 4px;
   padding: 15px 40px;
 }
@@ -210,7 +210,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .custom-button:hover {
-  background: #366fcc;
+  background: #340e59;
   transition: 0.3s all ease-in-out;
 }
 
@@ -226,7 +226,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .custom-button.tertiary {
   background: #ecf3fe;
-  color: #4286f5;
+  color: #5a189a;
 }
 
 .custom-button.tertiary:hover {
@@ -265,7 +265,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .navbar-custom .nav-link.active {
-  color: #4286f5;
+  color: #5a189a;
 }
 
 .navbar-custom .nav-link.inactive {
@@ -278,11 +278,11 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .navbar-custom .dropdown-item.activelink {
-  color: #4286f5;
+  color: #5a189a;
 }
 
 .dropdown.activelink .dropdown-toggle {
-  color: #4286f5;
+  color: #5a189a;
 }
 
 .navbar-custom .nav-item.show {
@@ -291,7 +291,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .navbar-custom .nav-item.show .nav-link {
-  color: #4286f5;
+  color: #5a189a;
 }
 
 .navbar-custom .dropdown-menu {
@@ -318,7 +318,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 .navbar-custom .dropdown-item:active {
   background: #f6f7f9;
-  color: #4286f5;
+  color: #5a189a;
 }
 
 .sign-in-dropdown {
@@ -369,7 +369,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .footer-strip {
-  background: #ffffff;
+  background-image: url(../images/footerbg.png);
   padding: 10px;
 }
 
@@ -383,12 +383,12 @@ body::-webkit-scrollbar-thumb:hover {
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
-  color: #000000;
+  color: #ffffff;
 }
 
 .footer-strip-flex p a {
   font-weight: 600;
-  color: #000000;
+  color: #ffffff;
   text-decoration: none;
   margin-left: 2px;
 }
@@ -406,7 +406,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .footer-text-with-logo a:hover {
-  color: #4286f5;
+  color: #5a189a;
   transition: 0.3s all ease-in-out;
 }
 
@@ -498,7 +498,7 @@ body::-webkit-scrollbar-thumb:hover {
 .vertical-tab-container .nav-link.active {
   background: #ecf3fe;
   border-radius: 4px;
-  color: #4286f5;
+  color: #5a189a;
   position: relative;
 }
 
@@ -698,7 +698,7 @@ body::-webkit-scrollbar-thumb:hover {
   font-weight: 700;
   font-size: 24px;
   line-height: 32px;
-  color: #4286f5;
+  color: #5a189a;
   margin-bottom: 20px;
 }
 
@@ -746,14 +746,14 @@ body::-webkit-scrollbar-thumb:hover {
 .interview-count {
   padding: 10px 18px;
   background: #ffffff;
-  border: 1px solid #4286f5;
+  border: 1px solid #5a189a;
   border-radius: 4px;
   font-family: "DM Sans", sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 22px;
   text-align: center;
-  color: #4286f5;
+  color: #5a189a;
 }
 
 .price-after {
@@ -819,7 +819,7 @@ body::-webkit-scrollbar-thumb:hover {
 } */
 
 .candidate-banner-image {
-  margin-top: 0;
+  margin-top: 40px;
 }
 
 .hr-slider-container {
@@ -900,12 +900,20 @@ body::-webkit-scrollbar-thumb:hover {
 
 .form-control:focus {
   box-shadow: none;
-  border-color: #4286f5;
+  border-color: #5a189a;
 }
 
 .form-control::placeholder {
   opacity: 0.4;
   font-weight: 400;
+}
+
+.for-emp {
+  margin-top: 60px;
+}
+
+.card-container {
+  margin-top: 20px;
 }
 
 /* ============== ======= ==== RESPONSIVE STYLES INCLUDE  ============== ======= ==== */

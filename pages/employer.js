@@ -21,11 +21,12 @@ import {
   SuccessSlider,
 } from "components";
 
-import BannerImg from "assets/images/bannerImg.png";
-import Efficiency from "assets/images/efficiency.png";
-import Integration from "assets/images/Integration.png";
-import Workflow from "assets/images/Workflow.png";
-import AI from "assets/images/AI.png";
+import BannerImg from "assets/images/employer_landing.jpg";
+import Efficiency from "assets/images/efficiency_recruitment.jpg";
+import Integration from "assets/images/multi_integration.jpg";
+import Workflow from "assets/images/integrate_workflow.jpg";
+import AI from "assets/images/ai_based_rec.jpg";
+import Plugin from "assets/images/plugin_functionality.jpg";
 import EastIcon from "@mui/icons-material/East";
 import Link from "next/link";
 
@@ -74,6 +75,18 @@ const whyUseTabData = [
         <Typography
           level="p2"
           text="Our cutting edge AI helps you save countless hours  by recomending the right candidates for your job."
+        />
+      </div>
+    ),
+  },
+  {
+    tabTitle: "Use with a Plugin Functionality",
+    tabContent: (
+      <div className="tab-content-container">
+        <Image src={Plugin} alt="Plugin" />
+        <Typography
+          level="p2"
+          text="Integrate on any website via plugin and direct all your data directly to VidRec’s main dashboard."
         />
       </div>
     ),
@@ -164,7 +177,12 @@ const Employer = () => {
                 transition={{ ease: "easeOut", delay: 1 }}
                 className="banner-img-block"
               >
-                <Image src={BannerImg} alt="BannerImg" />
+                <Image
+                  src={BannerImg}
+                  alt="BannerImg"
+                  width={570}
+                  height={570}
+                />
               </motion.div>
             </Col>
           </Row>

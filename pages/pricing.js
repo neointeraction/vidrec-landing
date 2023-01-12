@@ -24,13 +24,23 @@ import {
   ExploreBanner,
 } from "components";
 
-import Efficiency from "assets/images/efficiency.png";
-import Integration from "assets/images/Integration.png";
-import Workflow from "assets/images/Workflow.png";
-import AI from "assets/images/AI.png";
+import Efficiency from "assets/images/efficiency_recruitment.jpg";
+import Integration from "assets/images/multi_integration.jpg";
+import Workflow from "assets/images/integrate_workflow.jpg";
+import AI from "assets/images/ai_based_rec.jpg";
+import Plugin from "assets/images/plugin_functionality.jpg";
 import EastIcon from "@mui/icons-material/East";
 
-import CardIg from "assets/images/feature1.svg";
+import F1 from "assets/images/employer/f1.svg";
+import F2 from "assets/images/employer/f2.svg";
+import F3 from "assets/images/employer/f3.svg";
+import F4 from "assets/images/employer/f4.svg";
+import F5 from "assets/images/employer/f5.svg";
+import F6 from "assets/images/employer/f6.svg";
+import F7 from "assets/images/employer/f7.svg";
+import F8 from "assets/images/employer/f8.svg";
+import F9 from "assets/images/employer/f9.svg";
+
 import Link from "next/link";
 
 const whyUseTabData = [
@@ -82,51 +92,63 @@ const whyUseTabData = [
       </div>
     ),
   },
+  {
+    tabTitle: "Use with a Plugin Functionality",
+    tabContent: (
+      <div className="tab-content-container">
+        <Image src={Plugin} alt="Plugin" />
+        <Typography
+          level="p2"
+          text="Integrate on any website via plugin and direct all your data directly to VidRec’s main dashboard."
+        />
+      </div>
+    ),
+  },
 ];
 
 const featureData = [
   {
-    img: CardIg,
+    img: F1,
     title: "Create Job Listings with Ease",
     subtext: "Two line sentence about this process",
   },
   {
-    img: CardIg,
+    img: F2,
     title: "Access to Interview Builder ",
     subtext: "Two line sentence about this process",
   },
   {
-    img: CardIg,
+    img: F3,
     title: "Manage data on Dashboard",
     subtext: "Two line sentence about this process",
   },
   {
-    img: CardIg,
+    img: F4,
     title: "Hire the best with AI based tech",
     subtext: "Two line sentence about this process",
   },
   {
-    img: CardIg,
+    img: F5,
     title: "Witness the passion in the candidate ",
     subtext: "Two line sentence about this process",
   },
   {
-    img: CardIg,
+    img: F6,
     title: "Share Interview recordings to team/external experts",
     subtext: "Two line sentence about this process",
   },
   {
-    img: CardIg,
+    img: F7,
     title: "See important attributes of candidates",
     subtext: "Two line sentence about this process",
   },
   {
-    img: CardIg,
+    img: F8,
     title: "Hire based on overall feedback ",
     subtext: "Two line sentence about this process",
   },
   {
-    img: CardIg,
+    img: F9,
     title: "Excellent integrations with other platforms",
     subtext: "Two line sentence about this process",
   },
@@ -244,7 +266,7 @@ const Pricing = () => {
             animate={comparison}
             variants={blockAnimation}
           >
-            <div>
+            <div className="for-emp">
               <Row>
                 {featureData.map((item, index) => (
                   <Col xs={12} md={4} key={index}>

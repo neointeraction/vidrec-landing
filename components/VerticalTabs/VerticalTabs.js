@@ -6,7 +6,7 @@ function VerticalTabs({ data }) {
   return (
     <div className="vertical-tab-container">
       <Tab.Container id="left-tabs-example" defaultActiveKey={data[0].tabTitle}>
-        <Row>
+        <Row className="align-center">
           <Col sm={5}>
             <Nav variant="pills" className="flex-column">
               {data.map((item, index) => (

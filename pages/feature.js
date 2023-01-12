@@ -22,55 +22,74 @@ import {
   ExploreBanner,
 } from "components";
 
-import BannerImg from "assets/images/candidate-banner.png";
+import BannerImg from "assets/images/features_landing.jpg";
 import EastIcon from "@mui/icons-material/East";
 
 import CardIg from "assets/images/feature1.svg";
+
+import F1 from "assets/images/employer/f1.svg";
+import F2 from "assets/images/employer/f2.svg";
+import F3 from "assets/images/employer/f3.svg";
+import F4 from "assets/images/employer/f4.svg";
+import F5 from "assets/images/employer/f5.svg";
+import F6 from "assets/images/employer/f6.svg";
+import F7 from "assets/images/employer/f7.svg";
+import F8 from "assets/images/employer/f8.svg";
+import F9 from "assets/images/employer/f9.svg";
+// import F10 from "assets/images/employer/f10.svg";
+
+import C1 from "assets/images/ForCandidates/1Create-an-impactful-first impression.svg";
+import C2 from "assets/images/ForCandidates/2Easy-Application-Submission.svg";
+import C3 from "assets/images/ForCandidates/3Create _ Manage-Video-Resumes.svg";
+import C4 from "assets/images/ForCandidates/4Stand-out-from-the-crowd.svg";
+import C5 from "assets/images/ForCandidates/5Get-the-right-feedback.svg";
+import C6 from "assets/images/ForCandidates/6Show-your-passion-with-right-emotions.svg";
+
 import Link from "next/link";
 
 const featureData = [
   {
-    img: CardIg,
+    img: F1,
     title: "Create Job Listings with Ease",
     subtext: "Two line sentence about this process",
   },
   {
-    img: CardIg,
+    img: F2,
     title: "Access to Interview Builder ",
     subtext: "Two line sentence about this process",
   },
   {
-    img: CardIg,
+    img: F3,
     title: "Manage data on Dashboard",
     subtext: "Two line sentence about this process",
   },
   {
-    img: CardIg,
+    img: F4,
     title: "Hire the best with AI based tech",
     subtext: "Two line sentence about this process",
   },
   {
-    img: CardIg,
+    img: F5,
     title: "Witness the passion in the candidate ",
     subtext: "Two line sentence about this process",
   },
   {
-    img: CardIg,
+    img: F6,
     title: "Share Interview recordings to team/external experts",
     subtext: "Two line sentence about this process",
   },
   {
-    img: CardIg,
+    img: F7,
     title: "See important attributes of candidates",
     subtext: "Two line sentence about this process",
   },
   {
-    img: CardIg,
+    img: F8,
     title: "Hire based on overall feedback ",
     subtext: "Two line sentence about this process",
   },
   {
-    img: CardIg,
+    img: F9,
     title: "Excellent integrations with other platforms",
     subtext: "Two line sentence about this process",
   },
@@ -78,32 +97,32 @@ const featureData = [
 
 const candidateCards = [
   {
-    img: CardIg,
+    img: C1,
     title: "Create an impactful first impression",
     subtext: "Two line sentence about this process",
   },
   {
-    img: CardIg,
+    img: C2,
     title: "Easy Application Submission",
     subtext: "Two line sentence about this process",
   },
   {
-    img: CardIg,
+    img: C3,
     title: "Create & Manage Video Resumes",
     subtext: "Two line sentence about this process",
   },
   {
-    img: CardIg,
+    img: C4,
     title: "Stand-out from the crowd",
     subtext: "Two line sentence about this process",
   },
   {
-    img: CardIg,
+    img: C5,
     title: "Get the right feedback to improve your skills",
     subtext: "Two line sentence about this process",
   },
   {
-    img: CardIg,
+    img: C6,
     title: "Show your passion with right emotions",
     subtext: "Two line sentence about this process",
   },
@@ -214,7 +233,12 @@ const Feature = () => {
                 transition={{ ease: "easeOut", delay: 1 }}
                 className="banner-img-block"
               >
-                <Image src={BannerImg} alt="BannerImg" />
+                <Image
+                  src={BannerImg}
+                  alt="BannerImg"
+                  width={570}
+                  height={570}
+                />
               </motion.div>
             </Col>
           </Row>
@@ -251,7 +275,7 @@ const Feature = () => {
             animate={whyUse}
             variants={blockAnimation}
           >
-            <div>
+            <div className="for-emp">
               <Row>
                 {featureData.map((item, index) => (
                   <Col xs={12} md={4} key={index}>
@@ -371,7 +395,7 @@ const Feature = () => {
             animate={forCandidate}
             variants={blockAnimation}
           >
-            <div>
+            <div className="for-emp">
               <Row>
                 {candidateCards.map((item, index) => (
                   <Col xs={12} md={4} key={index}>

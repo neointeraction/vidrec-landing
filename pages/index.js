@@ -26,14 +26,19 @@ import {
   ExploreBanner,
 } from "components";
 
-import BannerImg from "assets/images/bannerImg.png";
-import Efficiency from "assets/images/efficiency.png";
-import Integration from "assets/images/Integration.png";
-import Workflow from "assets/images/Workflow.png";
-import AI from "assets/images/AI.png";
+import BannerImg from "assets/images/bannerImg.jpg";
+import Efficiency from "assets/images/efficiency_recruitment.jpg";
+import Integration from "assets/images/multi_integration.jpg";
+import Workflow from "assets/images/integrate_workflow.jpg";
+import AI from "assets/images/ai_based_rec.jpg";
+import Plugin from "assets/images/plugin_functionality.jpg";
+
 import EastIcon from "@mui/icons-material/East";
 
-import CardIg from "assets/images/temp/box.jpg";
+import CreateImpact from "assets/images/create_impact.jpg";
+import EasyApp from "assets/images/easy_app_submission.jpg";
+import ManageVid from "assets/images/manage_video_resume.jpg";
+
 import Link from "next/link";
 
 const whyUseTabData = [
@@ -85,21 +90,33 @@ const whyUseTabData = [
       </div>
     ),
   },
+  {
+    tabTitle: "Use with a Plugin Functionality",
+    tabContent: (
+      <div className="tab-content-container">
+        <Image src={Plugin} alt="Plugin" />
+        <Typography
+          level="p2"
+          text="Integrate on any website via plugin and direct all your data directly to VidRec’s main dashboard."
+        />
+      </div>
+    ),
+  },
 ];
 
 const candidateCards = [
   {
-    img: CardIg,
+    img: CreateImpact,
     title: "Create an impactful first impression",
     subtext: "Two line sentence about this process",
   },
   {
-    img: CardIg,
+    img: EasyApp,
     title: "Easy Application Submission",
     subtext: "Two line sentence about this process",
   },
   {
-    img: CardIg,
+    img: ManageVid,
     title: "Create & Manage Video Resumes",
     subtext: "Two line sentence about this process",
   },

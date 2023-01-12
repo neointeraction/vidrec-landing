@@ -15,28 +15,34 @@ import {
 
 import { Typography, Button, Card, HRSlider } from "components";
 
-import BannerImg from "assets/images/candidate-banner.png";
+import BannerImg from "assets/images/candidate_landing.jpg";
+import GetHired from "assets/images/get_hired.jpg";
 import EastIcon from "@mui/icons-material/East";
-import W1 from "assets/images/w1.jpg";
-import W2 from "assets/images/w2.jpg";
-import W3 from "assets/images/w3.jpg";
+import W1 from "assets/images/whatsapp_updates.jpg";
+// import W2 from "assets/images/w2.jpg";
+// import W3 from "assets/images/w3.jpg";
 
-import CardIg from "assets/images/temp/box.jpg";
+// import CardIg from "assets/images/temp/box.jpg";
+
+import Impression from "assets/images/right_feedback.jpg";
+import Passion from "assets/images/passion.jpg";
+import Feedback from "assets/images/right_feedback.jpg";
+
 import Link from "next/link";
 
 const candidateCards = [
   {
-    img: CardIg,
+    img: Impression,
     title: "Create an impactful first impression",
     subtext: "Two line sentence about this process",
   },
   {
-    img: CardIg,
+    img: Passion,
     title: "Easy Application Submission",
     subtext: "Two line sentence about this process",
   },
   {
-    img: CardIg,
+    img: Feedback,
     title: "Create & Manage Video Resumes",
     subtext: "Two line sentence about this process",
   },
@@ -298,7 +304,7 @@ const Candidate = () => {
             variants={blockAnimation}
           >
             <div className="margin-container">
-              <Row className="justify-content-center gx-16-minus">
+              {/* <Row className="justify-content-center gx-16-minus">
                 <Col>
                   <Image src={W1} alt="W1" />
                 </Col>
@@ -308,7 +314,8 @@ const Candidate = () => {
                 <Col>
                   <Image src={W3} alt="W3" />
                 </Col>
-              </Row>
+              </Row> */}
+              <Image src={W1} alt="W1" />
             </div>
           </motion.div>
         </Container>
@@ -378,7 +385,7 @@ const Candidate = () => {
                 animate={pricing}
                 variants={blockAnimation}
               >
-                <Image src={BannerImg} alt="BannerImg" />
+                <Image src={GetHired} alt="GetHired" />
               </motion.div>
             </Col>
           </Row>
